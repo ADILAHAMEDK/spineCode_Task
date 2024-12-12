@@ -18,7 +18,7 @@ const TaskManagement = () => {
       .min(3, "title must be at least 3 characters long"),
     description: Yup.string()
       .required("description is required")
-      .min(4, "description must be at least 3 characters long"),
+      .min(4, "description must be at least 4 characters long"),
   });
 
   const handleTask = async (values, { resetForm }) => {
