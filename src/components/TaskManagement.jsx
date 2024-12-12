@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/Config";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
 
 const TaskManagement = () => {
   const navigate = useNavigate()
@@ -18,8 +17,8 @@ const TaskManagement = () => {
       .required("title is required")
       .min(3, "title must be at least 3 characters long"),
     description: Yup.string()
-      .required("Email is required")
-      // .min(3, "title must be at least 3 characters long"),
+      .required("description is required")
+      .min(4, "description must be at least 3 characters long"),
   });
 
   const handleTask = async (values, { resetForm }) => {

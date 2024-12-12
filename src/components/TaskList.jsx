@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { collection, onSnapshot, doc, deleteDoc, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase/Config";
 import { MdDelete, MdEdit } from "react-icons/md";
 
@@ -19,7 +25,7 @@ const TaskList = () => {
       setTasks(tasksData);
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, []);
 
   const handleDelete = async (taskId) => {
@@ -72,22 +78,19 @@ const TaskList = () => {
                   className="block w-full mb-2 p-1 border rounded"
                 />
                 <div className="flex items-center justify-between border">
-                <button
-                  onClick={() => handleUpdate(task.id)}
-                  className="block bg-blue-600 text-white rounded"
-                >
-                  Save
-                </button>
-                <button
-                  onClick={() => setEditingTask(null)}
-                  className="block bg-gray-400 text-white  rounded mt-2"
-                >
-                  Cancel
-                </button>
-                {/* <button onClick={() => handleUpdate(task.id)} className="bg-black text-blue-700  py-1 px-1 rounded">Edit</button>
-                <button onClick={() => setEditingTask(null)} className="bg-black text-red-600 py-1 px-2 rounded">Cancel</button> */}
+                  <button
+                    onClick={() => handleUpdate(task.id)}
+                    className="block bg-blue-600 text-white rounded"
+                  >
+                    Save
+                  </button>
+                  <button
+                    onClick={() => setEditingTask(null)}
+                    className="block bg-gray-400 text-white  rounded mt-2"
+                  >
+                    Cancel
+                  </button>
                 </div>
-          
               </div>
             ) : (
               <div>
