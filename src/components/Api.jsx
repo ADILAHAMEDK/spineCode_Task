@@ -27,11 +27,11 @@ const Api = () => {
       ) : (
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           {data.map((product) => (
-            <div key={product.id} className="p-4 border rounded">
+            <div key={product.id} className="p-4 border rounded mx-auto">
               <img src={product.image} alt={product.title} className="h-40 mx-auto" />
-              <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
-              <p className="text-sm text-gray-700">{product.description}</p>
-              <p className="text-lg font-bold mt-2">${product.price}</p>
+              <h2 className="text-center text-lg font-semibold mt-2">{product.title}</h2>
+              <p className="text-center text-sm text-gray-700">{product.description}</p>
+              <p className="text-center text-lg font-bold mt-2">${product.price}</p>
             </div>
           ))}
         </div>

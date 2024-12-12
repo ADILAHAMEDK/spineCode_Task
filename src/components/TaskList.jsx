@@ -77,16 +77,16 @@ const TaskList = () => {
                   onChange={(e) => setEditedDescription(e.target.value)}
                   className="block w-full mb-2 p-1 border rounded"
                 />
-                <div className="flex items-center justify-between border">
+                <div className="flex items-center justify-between">
                   <button
                     onClick={() => handleUpdate(task.id)}
-                    className="block bg-blue-600 text-white rounded"
+                    className="block bg-blue-600 text-white rounded px-2"
                   >
                     Save
                   </button>
                   <button
                     onClick={() => setEditingTask(null)}
-                    className="block bg-gray-400 text-white  rounded mt-2"
+                    className="block bg-gray-400 text-white  rounded px-2"
                   >
                     Cancel
                   </button>
