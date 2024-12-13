@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/Config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const TaskManagement = () => {
   const navigate = useNavigate()
@@ -31,6 +32,7 @@ const TaskManagement = () => {
       });
   
       console.log("Task added successfully!");
+      toast.success("Task added successfully!");
       resetForm();
       navigate("/tasklist")
     } catch (error) {
@@ -41,9 +43,13 @@ const TaskManagement = () => {
   return (
     <div className="flex justify-center bg-blue-950 h-screen px-2 sm:px-0">
       <div className="w-[400px] h-[300px]">
-        <h1 className="mt-10 mb-2 text-xl font-semibold text-white">
+        <div className="mt-10 mb-2 flex items-center justify-between">
+        <h1 className=" text-xl font-semibold text-white">
         Task Management
         </h1>
+        <Link to="/tasklist" className="text-xl font-semibold text-red-500">Task List</Link>
+        </div>
+        
         <div className="w-full border border-white sm:border-black rounded px-2">
           <Formik
             initialValues={initialValues}
